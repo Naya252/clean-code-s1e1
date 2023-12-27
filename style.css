@@ -14,7 +14,7 @@
   width: 100%;
 }
 .hero .info {
-  font-family: fantasy, cursive;
+  font-family: Centaur, fantasy, cursive;
 }
 
 @media (max-width:768px) {
