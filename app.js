@@ -3,7 +3,7 @@
 //Break things down into smaller steps and take each step at a time.
 
 let taskInput = document.getElementById("new-task");
-let addButton = document.getElementsByTagName("button")[0];
+let addButton = document.querySelector(".add-btn");
 let todoTasks = document.getElementById("todo-tasks");
 let completedTasks = document.getElementById("completed-tasks");
 
