@@ -11,15 +11,22 @@
     >
   </head>
   <body class="body">
-    <div class="hero">
+    <figure class="hero">
       <img class="img" src="./eisenhower-matrix.jpg">
-      <a class="info" href="https://goal-life.com/page/method/matrix-eisenhower">
-        Want more details?
-      </a>
-    </div>
-    <div class="main">
-      <p id="add-section">
-        <label class="title label-new-task" for="new-task">Add Item</label>
+      <h3 class="heading"> 
+        <a class="info" href="https://goal-life.com/page/method/matrix-eisenhower">
+          Want more details?
+        </a>
+      </h3>
+    </figure>
+    <main class="main">
+      <h1 class="heading main-title">Todo List</h1>
+      <section id="add-section">
+        <h2>
+          <label class="title label-new-task" for="new-task">
+            Add Item
+          </label>
+        </h2>
         <div class="task-wrapper">
           <input 
             id="new-task"
@@ -28,45 +35,49 @@
           >
           <button class="plain-btn">Add</button>
         </div>
-      </p>
-      <h3 class="title">Todo</h3>
-      <ul id="todo-section">
-        <li class="todo">
-          <input class="checkbox" type="checkbox">
-          <label class="task label-task">Pay Bills</label>
-          <input type="text" class="task input-task">
-          <button class="plain-btn edit-btn">Edit</button>
-          <button class="delete-btn">
-            <img class="img" src="./remove.svg">
-          </button>
-        </li>
-        <li class="edit-mode todo">
-          <input class="checkbox" type="checkbox">
-          <label class="task label-task">Go Shopping</label>
-          <input 
-            type="text" 
-            value="Go Shopping" 
-            class="task input-task"
-          >
-          <button class="plain-btn edit-btn">Save</button>
-          <button class="delete-btn">
-            <img class="img" src="./remove.svg">
-          </button>
-        </li>
-      </ul>
-      <h3 class="title">Completed</h3>
-      <ul id="completed-section">
-        <li class="todo">
-          <input class="checkbox" type="checkbox" checked>
-          <label class="task label-task">See the Doctor</label>
-          <input type="text" class="task input-task">
-          <button class="plain-btn edit-btn">Edit</button>
-          <button class="delete-btn">
-            <img class="img" src="./remove.svg">
-          </button>
-        </li>
-      </ul>
-    </div>
+      </section>
+      <section id="todo-section">
+        <h2 class="title">Todo</h2>
+        <ul id="todo-tasks">
+          <li class="todo">
+            <input class="checkbox" type="checkbox">
+            <label class="task label-task">Pay Bills</label>
+            <input type="text" class="task input-task">
+            <button class="plain-btn edit-btn">Edit</button>
+            <button class="delete-btn">
+              <img class="img" src="./remove.svg">
+            </button>
+          </li>
+          <li class="edit-mode todo">
+            <input class="checkbox" type="checkbox">
+            <label class="task label-task">Go Shopping</label>
+            <input 
+              type="text" 
+              value="Go Shopping" 
+              class="task input-task"
+            >
+            <button class="plain-btn edit-btn">Save</button>
+            <button class="delete-btn">
+              <img class="img" src="./remove.svg">
+            </button>
+          </li>
+        </ul>
+      </section>
+      <section id="completed-section">
+        <h2 class="title">Completed</h2>
+        <ul id="completed-tasks">
+          <li class="todo">
+            <input class="checkbox" type="checkbox" checked>
+            <label class="task label-task">See the Doctor</label>
+            <input type="text" class="task input-task">
+            <button class="plain-btn edit-btn">Edit</button>
+            <button class="delete-btn">
+              <img class="img" src="./remove.svg">
+            </button>
+          </li>
+        </ul>
+      </section>
+    </main>
     <script src="app.js"></script>
   </body>
 </html>
