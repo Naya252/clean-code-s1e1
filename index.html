@@ -12,16 +12,16 @@
   </head>
   <body class="body">
     <figure class="hero">
-      <img class="img" src="./eisenhower-matrix.jpg" alt="The Eisenhower matrix">
-      <h3 class="heading"> 
-        <a class="info" href="https://goal-life.com/page/method/matrix-eisenhower">
+      <img class="hero__img" src="./eisenhower-matrix.jpg" alt="The Eisenhower matrix">
+      <h3 class="heading hero__text"> 
+        <a class="hero__text_info" href="https://goal-life.com/page/method/matrix-eisenhower">
           Want more details?
         </a>
       </h3>
     </figure>
     <main class="main">
-      <h1 class="heading main-title">Todo List</h1>
-      <section id="add-section">
+      <h1 class="main__title">Todo List</h1>
+      <section class="main__add">
         <h2>
           <label class="title label-new-task" for="new-task">
             Add Item
@@ -36,25 +36,25 @@
           <button class="plain-btn">Add</button>
         </div>
       </section>
-      <section id="todo-section">
+      <section class="main__todo">
         <h2 class="title">Todo</h2>
-        <ul id="todo-tasks">
-          <li class="todo">
-            <input class="checkbox" type="checkbox">
-            <label class="task label-task">Pay Bills</label>
-            <input type="text" class="task input-task">
+        <ul id="todo-tasks" class="tasks">
+          <li class="tasks__item">
+            <input class="tasks__item_checkbox" type="checkbox">
+            <label class="tasks__item_label">Pay Bills</label>
+            <input type="text" class="tasks__item_input">
             <button class="plain-btn edit-btn">Edit</button>
             <button class="delete-btn">
               <img class="img" alt="remove" src="./remove.svg">
             </button>
           </li>
-          <li class="edit-mode todo">
-            <input class="checkbox" type="checkbox">
-            <label class="task label-task">Go Shopping</label>
+          <li class="edit-mode tasks__item">
+            <input class="tasks__item_checkbox" type="checkbox">
+            <label class="tasks__item_label">Go Shopping</label>
             <input 
               type="text" 
               value="Go Shopping" 
-              class="task input-task"
+              class="tasks__item_input"
             >
             <button class="plain-btn edit-btn">Save</button>
             <button class="delete-btn">
@@ -63,13 +63,13 @@
           </li>
         </ul>
       </section>
-      <section id="completed-section">
+      <section class="main__completed">
         <h2 class="title">Completed</h2>
-        <ul id="completed-tasks">
-          <li class="todo">
-            <input class="checkbox" type="checkbox" checked>
-            <label class="task label-task">See the Doctor</label>
-            <input type="text" class="task input-task">
+        <ul id="completed-tasks" class="tasks">
+          <li class="tasks__item">
+            <input class="tasks__item_checkbox" type="checkbox" checked>
+            <label class="tasks__item_label">See the Doctor</label>
+            <input type="text" class="tasks__item_input">
             <button class="plain-btn edit-btn">Edit</button>
             <button class="delete-btn">
               <img class="img" alt="remove" src="./remove.svg">
