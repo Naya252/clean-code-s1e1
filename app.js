@@ -48,17 +48,17 @@ const createNewTaskElement = (taskString) => {
   return listItem;
 }
 
-// TODO: prevent creation of empty tasks
 const addTask = () => {
+  if (!taskInput.value.trim()) return;
   console.log("Add Task...");
 
-  if (!taskInput.value) return;
   let listItem = createNewTaskElement(taskInput.value);
 
   todoTasks.appendChild(listItem);
   bindTaskEvents(listItem, taskCompleted);
 
   taskInput.value = "";
+  ajaxRequest();
 }
 
 // TODO: change edit to save when you are in edit mode.
@@ -117,7 +117,6 @@ const ajaxRequest = () => {
 //Set the click handler to the addTask function.
 addButton.onclick = addTask;
 addButton.addEventListener("click", addTask);
-addButton.addEventListener("click", ajaxRequest);
 
 /**
  * @param {element} taskListItem todo item.
