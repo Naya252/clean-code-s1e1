@@ -120,31 +120,26 @@ const ajaxRequest = () => {
  */
 const bindTaskEvents = (taskListItem, checkBoxEventHandler) => {
   console.log("bind list item events");
-//select ListItems children
   let checkBox = taskListItem.querySelector(".tasks__item_checkbox");
   let editButton = taskListItem.querySelector(".edit-btn");
   let deleteButton = taskListItem.querySelector(".delete-btn");
 
-  //Bind editTask to edit button.
   editButton.onclick = editTask;
-  //Bind deleteTask to delete button.
   deleteButton.onclick = deleteTask;
-  //Bind finishTask to checkBoxEventHandler.
   checkBox.onchange = checkBoxEventHandler;
 }
 
-//Set the click handler to the addTask function.
 addButton.addEventListener("click", addTask);
 
-//cycle over todoTasks ul list items
-//for each list item
-for (let i = 0; i < todoTasks.children.length; i++) {
-  //bind events to list items chldren(tasksCompleted)
-  bindTaskEvents(todoTasks.children[i], finishTask);
+/**
+ * @param {element} tasks parent of todo items.
+ * @param {function} event change value of checkbox.
+ */
+function bindEventstoExistTasks(tasks, event) {
+  for (let i = 0; i < tasks.children.length; i++) {
+    bindTaskEvents(tasks.children[i], event);
+  }
 }
 
-//cycle over completedTasks ul list items
-for (let i = 0; i < completedTasks.children.length; i++){
-  //bind events to list items chldren(tasksIncompleted)
-  bindTaskEvents(completedTasks.children[i], unfinishTask);
-}
+bindEventstoExistTasks(todoTasks, finishTask);
+bindEventstoExistTasks(completedTasks, unfinishTask);
