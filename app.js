@@ -7,7 +7,11 @@ let addButton = document.querySelector(".add-btn");
 let todoTasks = document.getElementById("todo-tasks");
 let completedTasks = document.getElementById("completed-tasks");
 
-const createNewTaskElement = function(taskString) {
+/**
+ * @param {string} taskString The value of tasls input.
+ * @return {element} The future child of todo list.
+ */
+const createNewTaskElement = (taskString) => {
   let listItem = document.createElement("li");
   listItem.className = "tasks__item";
 
@@ -44,7 +48,8 @@ const createNewTaskElement = function(taskString) {
   return listItem;
 }
 
-const addTask = function() {
+// TODO: prevent creation of empty tasks
+const addTask = () => {
   console.log("Add Task...");
 
   if (!taskInput.value) return;
@@ -56,6 +61,7 @@ const addTask = function() {
   taskInput.value = "";
 }
 
+// TODO: change edit to save when you are in edit mode.
 const editTask = function() {
   console.log("Edit Task...");
   console.log("Change 'edit' to 'save'");
@@ -66,10 +72,9 @@ const editTask = function() {
   let label = listItem.querySelector(".tasks__item_label");
   let editBtn = listItem.querySelector(".edit-btn");
   let containsClass = listItem.classList.contains("edit-mode");
-  //If class of the parent is .edit-mode
+
   if(containsClass) {
     //switch to .edit-mode
-    //label becomes the inputs value.
     label.innerText = editInput.value;
     editBtn.innerText = "Edit";
   } else {
@@ -81,12 +86,11 @@ const editTask = function() {
   listItem.classList.toggle("edit-mode");
 };
 
-const deleteTask = function () {
+const deleteTask = function() {
   console.log("Delete Task...");
 
   let listItem = this.parentNode;
   let ul = listItem.parentNode;
-  //Remove the parent list item from the ul.
   ul.removeChild(listItem);
 }
 
@@ -101,23 +105,25 @@ const taskCompleted = function() {
 const taskIncomplete = function () {
   console.log("Incomplete Task...");
 
-  //When the checkbox is unchecked
-  //Append the task list item to the main__todo.
   let listItem = this.parentNode;
   todoTasks.appendChild(listItem);
-  bindTaskEvents(listItem,taskCompleted);
+  bindTaskEvents(listItem, taskCompleted);
 }
 
-const ajaxRequest = function() {
+const ajaxRequest = () => {
   console.log("AJAX Request");
 }
 
 //Set the click handler to the addTask function.
 addButton.onclick = addTask;
-addButton.addEventListener("click",addTask);
-addButton.addEventListener("click",ajaxRequest);
+addButton.addEventListener("click", addTask);
+addButton.addEventListener("click", ajaxRequest);
 
-const bindTaskEvents = function(taskListItem,checkBoxEventHandler) {
+/**
+ * @param {element} taskListItem todo item.
+ * @param {function} checkBoxEventHandler change value of checkbox.
+ */
+const bindTaskEvents = (taskListItem, checkBoxEventHandler) => {
   console.log("bind list item events");
 //select ListItems children
   let checkBox = taskListItem.querySelector(".tasks__item_checkbox");
@@ -144,7 +150,3 @@ for (let i = 0; i < completedTasks.children.length; i++){
   //bind events to list items chldren(tasksIncompleted)
   bindTaskEvents(completedTasks.children[i], taskIncomplete);
 }
-
-//prevent creation of empty tasks.
-
-//Change edit to save when you are in edit mode.
