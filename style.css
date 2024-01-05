@@ -94,7 +94,7 @@
 }
 
 .new-task__input:focus,
-.task__input {
+.task__input:focus {
   color: #333;
 }
 
