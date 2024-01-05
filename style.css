@@ -45,7 +45,8 @@ li {
 input {
   outline: none;
 }
-.plain-btn, .delete-btn {
+.plain-btn, 
+.delete-btn {
   background: none;
   border: 0px;
   cursor: pointer;
