@@ -63,8 +63,6 @@ const addTask = () => {
 
 // TODO: change edit to save when you are in edit mode.
 const editTask = function() {
-  console.log("Edit Task...");
-  console.log("Change 'edit' to 'save'");
 
   let listItem = this.parentNode;
 
@@ -74,10 +72,12 @@ const editTask = function() {
   let containsClass = listItem.classList.contains("edit-mode");
 
   if(containsClass) {
+    console.log("Change 'edit' to 'save'");
     //switch to .edit-mode
     label.innerText = editInput.value;
     editBtn.innerText = "Edit";
   } else {
+    console.log("Edit Task...");
     editInput.value = label.innerText;
     editBtn.innerText = "Save";
   }
